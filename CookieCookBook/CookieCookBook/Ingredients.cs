@@ -10,14 +10,15 @@ namespace CookieCookBook
     {
         public static List<string> flours = new List<string> 
         {
-            "All-Purpose Flour",
-            "Bread Flour",
-            "Cake Flour",
-            "Pastry Flour",
-            "Almond Flour",
-            "Sand",
-            "Cornmeal",
-            "Oatmeal"
+            "1) All-Purpose Flour",
+            "2) Bread Flour",
+            "3) Cake Flour",
+            "4) Pastry Flour",
+            "5) Almond Flour",
+            "6) Sand",
+            "7) Cornmeal",
+            "8) Oatmeal",
+            "9) Go Back"
 
         };
         public static List<string> sweeteners = new List<string>
@@ -32,7 +33,7 @@ namespace CookieCookBook
             "Corn Syrup"
 
         };
-        public static List<string> wetIndredients = new List<string>
+        public static List<string> wetIngredients = new List<string>
         {
             "Eggs",
             "Milk",

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using CookieCookBook.CreateRecipe;
+using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 
 namespace CookieCookBook
@@ -13,15 +14,17 @@ namespace CookieCookBook
             {
                 "1) Open Saved Recipes",
                 "2) Create New Recipe",
-                "3) Exit Application"
+                "3) Ingredient Info",
+                "4) Exit Application"
             };
 
 
             do
             {
+                Console.Clear();
                 Console.SetWindowSize(110, 50);
                 WriteBorder();
-                WriteMenus(mainMenu, 2, 1);
+                WriteMenus(mainMenu, 10, 10);
                 ConsoleKey keyPressed = Console.ReadKey().Key;
 
 
@@ -29,12 +32,26 @@ namespace CookieCookBook
                 {
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
+                        // need to adjust this if statement so it will also check if the folder is there but empty
+                        if (!SavedRecipes.CheckSaveFolder())
+                        {
+                            Console.Clear();
+                            WriteBorder();
+                            Console.SetCursorPosition(10, 10);
+                            Console.WriteLine("Sorry, you have no items saved at this time.");
+                            Console.ReadKey();
+                        }
+                        
                         break;
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
+                        CreateRecipeMainLoop.MainLoop();
                         break;
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
+                        break;
+                    case ConsoleKey.D4:
+                    case ConsoleKey.NumPad4:
                         running = false;
                         break;
                 }
@@ -46,7 +63,7 @@ namespace CookieCookBook
 
 
         
-        static void WriteMenus(List<string> x, int xPos, int yPos)
+        public static void WriteMenus(List<string> x, int xPos, int yPos)
         {
             foreach (string item in x)
             {
@@ -56,7 +73,7 @@ namespace CookieCookBook
             }
         }
 
-        static void WriteBorder()
+        public static void WriteBorder()
         {
             //top 
             for(int i = 0; i <=109 ; i++)
