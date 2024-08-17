@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CookieCookBook.CreateRecipe;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,16 +12,20 @@ namespace CookieCookBook
     {
         public readonly bool isAFlour = true;
         public string name;
+        public string description;
 
 
     }
 
     class AllPurposeFlour : Flours
     {
-        public AllPurposeFlour(string _name)
+        
+        public AllPurposeFlour(string _name,string _description)
         {
-            _name = name;
+            name = _name;
+            description = _description;
         }
+
     }
 
     class BreadFlour : Flours
@@ -83,9 +89,12 @@ namespace CookieCookBook
         public static void MainLoop()
         {
             bool running = true;
-
+            string _APFdescription = "A general purpose flour. Cookies that contain all purpos flour generally have a " +
+                              "balanced texture, providing a good combination of tenderness and structure, making  " +
+                              "it versatile for a variety of cookie types, from soft and chewy to crisp and firm.";
             Console.Clear();
             Program.WriteBorder();
+            Program.WriteMenus(Program.logo, 2, 1);
             Program.WriteMenus(Ingredients.flours,10,10);
             
             do
@@ -96,6 +105,11 @@ namespace CookieCookBook
                 {
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
+                        // make sure the check matches witth this so if the user says no, it doesn't add it anyway. 
+                        AllPurposeFlour APF = new AllPurposeFlour("All Purpose Flour", _APFdescription);
+                        Program.TextWrap(APF.description, 50,10,30);
+                        CreateRecipeMainLoop.AddToRecipe("APF", 10, 40);
+                        Console.ReadKey();
                         break;
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
@@ -125,6 +139,10 @@ namespace CookieCookBook
 
                 }
             } while (running);
+
+
+
+            
         }
     }
 }

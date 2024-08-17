@@ -24,15 +24,16 @@ namespace CookieCookBook.CreateRecipe
 
             Console.Clear();
             Program.WriteBorder();
-            Program.WriteMenus(menuOptions,10,10);
+            Program.WriteMenus(Program.logo, 2, 1);
+            Program.WriteMenus(menuOptions, 10, 10);
 
-            do 
+            do
             {
 
 
                 ConsoleKey keyPressed = Console.ReadKey().Key;
 
-                switch(keyPressed)
+                switch (keyPressed)
                 {
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
@@ -54,7 +55,31 @@ namespace CookieCookBook.CreateRecipe
 
                 }
             } while (running);
+
+
         }
 
+        public static void AddToRecipe(string ingredientName, int x, int y)
+        {
+            string add = "Do you want to add this ingredient to the current recipe? [Y/N]";
+            Program.TextWrap(add, 50, 20, 30);
+            string answer = Console.ReadLine();
+            if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+            {
+                Buffer.bufferedRecipe.Add(ingredientName);
+            }
+            else if (answer.ToLower() == "n" || answer.ToLower() == "no")
+            {
+
+            }
+            else
+            {
+                Console.SetCursorPosition(20, 10);
+                Console.WriteLine("Invalid input. Please try again");
+                Console.ReadKey();
+            }
+        }
     }
+
+    
 }

@@ -1,6 +1,7 @@
 ﻿using CookieCookBook.CreateRecipe;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 namespace CookieCookBook
 {
@@ -25,6 +26,7 @@ namespace CookieCookBook
                 Console.SetWindowSize(110, 50);
                 WriteBorder();
                 WriteMenus(mainMenu, 10, 10);
+                WriteMenus(logo,2, 1);
                 ConsoleKey keyPressed = Console.ReadKey().Key;
 
 
@@ -100,5 +102,68 @@ namespace CookieCookBook
                 Console.WriteLine("#");
             }
         }
+
+        public static void TextWrap(string inputText, int xPos, int yPos, int width)
+        {
+            if (inputText == null)
+            {
+                inputText = string.Empty;
+            }
+
+            string[] words = inputText.Split(' ');
+
+            int currentLineLength = 0;
+            int currentY = yPos;
+            StringBuilder currentLine = new StringBuilder();
+
+            int height = (inputText.Length / width) + 2;
+
+            for (int i = 0; i <= height + 1; i++)
+            {
+                Console.SetCursorPosition(xPos - 1, yPos + i);
+                Console.Write(new string(' ', width + 2));
+            }
+
+            currentY++;
+
+            foreach (string word in words)
+            {
+                if (currentLineLength + word.Length + 1 > width)
+                {
+                    Console.SetCursorPosition(xPos, currentY);
+                    Console.WriteLine(currentLine.ToString());
+
+                    currentY++;
+
+                    currentLine.Clear();
+                    currentLineLength = 0;
+                }
+
+                if (currentLineLength > 0)
+                {
+                    currentLine.Append(" ");
+                    currentLineLength++;
+                }
+                currentLine.Append(word);
+                currentLineLength += word.Length;
+            }
+
+            if (currentLineLength > 0)
+            {
+                Console.SetCursorPosition(xPos, currentY);
+                Console.WriteLine(currentLine.ToString());
+            }
+        }
+
+
+        public static List<string> logo = new List<string>
+        {
+            "   _____ ____   ____  _  _______ ______    _____ _____            ______ _______ ______ _____  ",
+            "  / ____/ __ \\ / __ \\| |/ /_   _|  ____|  / ____|  __ \\     /\\   |  ____|__   __|  ____|  __ \\ ",
+            " | |   | |  | | |  | | ' /  | | | |__    | |    | |__) |   /  \\  | |__     | |  | |__  | |__) |",
+            " | |   | |  | | |  | |  <   | | |  __|   | |    |  _  /   / /\\ \\ |  __|    | |  |  __| |  _  / ",
+            " | |___| |__| | |__| | . \\ _| |_| |____  | |____| | \\ \\  / ____ \\| |       | |  | |____| | \\ \\ ",
+            "  \\_____\\____/ \\____/|_|\\_\\_____|______|  \\_____|_|  \\_\\/_/    \\_\\_|       |_|  |______|_|  \\_\\",
+        };
     }
 }
