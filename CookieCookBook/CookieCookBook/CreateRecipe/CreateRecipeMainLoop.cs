@@ -63,6 +63,7 @@ namespace CookieCookBook.CreateRecipe
         {
             string add = "Do you want to add this ingredient to the current recipe? [Y/N]";
             Program.TextWrap(add, 50, 20, 30);
+            Console.SetCursorPosition(50, 25);
             string answer = Console.ReadLine();
             if (answer.ToLower() == "y" || answer.ToLower() == "yes")
             {
