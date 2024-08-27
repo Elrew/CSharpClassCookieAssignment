@@ -23,47 +23,47 @@ namespace CookieCookBook
         };
         public static List<string> sweeteners = new List<string>
         {
-            "White Sugar",
-            "Brown Sugar",
-            "Honey",
-            "Maple Syrup",
-            "Cough Syrup",
-            "Coconut Sugar",
-            "Stevia",
-            "Corn Syrup"
+            "1) White Sugar",
+            "2) Brown Sugar",
+            "3) Honey",
+            "4) Maple Syrup",
+            "5) Cough Syrup",
+            "6) Coconut Sugar",
+            "7) Stevia",
+            "8) Corn Syrup"
 
         };
         public static List<string> wetIngredients = new List<string>
         {
-            "Eggs",
-            "Milk",
-            "Butter",
-            "Oil",
-            "Yogurt",
-            "Buttermilk",
-            "Cum",
-            "Heavy Cream",
-            "Water",
-            "Coffee",
-            "Cola",
-            "Orange Oil",
-            "Vanilla Extract"
+            "1) Eggs",
+            "2) Milk",
+            "3) Butter",
+            "4) Oil",
+            "5) Yogurt",
+            "6) Buttermilk",
+            "7) Cum",
+            "8) Heavy Cream",
+            "9) Water",
+            "10) Coffee",
+            "11) Cola",
+            "12) Orange Oil",
+            "13) Vanilla Extract"
 
         };
         public static List<string> flavorEnhancers = new List<string>
         {
-            "Chocolate Chips",
-            "White Cholocate Chips",
-            "Walnuts",
-            "Peanuts",
-            "M&Ms",
-            "Cranberries",
-            "Raisins",
-            "Olives",
-            "Bacon Pieces",
-            "Sprinkles",
-            "Pretzel Pieces",
-            "Lemon Zest"
+            "1) Chocolate Chips",
+            "2) White Cholocate Chips",
+            "3) Walnuts",
+            "4) Peanuts",
+            "5) M&Ms",
+            "6) Cranberries",
+            "7) Raisins",
+            "8) Olives",
+            "9) Bacon Pieces",
+            "10) Sprinkles",
+            "11) Pretzel Pieces",
+            "12) Lemon Zest"
 
         };
 

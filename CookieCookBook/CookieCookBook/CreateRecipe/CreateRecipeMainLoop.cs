@@ -17,19 +17,20 @@ namespace CookieCookBook.CreateRecipe
                 "2) Sweeteners",
                 "3) Wet Ingredients",
                 "4) Flavor Enhancers",
-                "5) Go Back",
+                "5) Save completed recipe",
+                "6) Go Back",
 
             };
             bool running = true;
 
-            Console.Clear();
-            Program.WriteBorder();
-            Program.WriteMenus(Program.logo, 2, 1);
-            Program.WriteMenus(menuOptions, 10, 10);
+
 
             do
             {
-
+                Console.Clear();
+                Program.WriteBorder();
+                Program.WriteMenus(Program.logo, 2, 1);
+                Program.WriteMenus(menuOptions, 10, 10);
 
                 ConsoleKey keyPressed = Console.ReadKey().Key;
 
@@ -50,6 +51,10 @@ namespace CookieCookBook.CreateRecipe
                         break;
                     case ConsoleKey.D5:
                     case ConsoleKey.NumPad5:
+                        SaveSystem.SerializeToJSON();
+                        break;
+                    case ConsoleKey.D6:
+                    case ConsoleKey.NumPad6:
                         running = false;
                         break;
 
@@ -59,7 +64,7 @@ namespace CookieCookBook.CreateRecipe
 
         }
 
-        public static void AddToRecipe(string ingredientName, int x, int y)
+        public static void AddToRecipe(string ingredientName)
         {
             string add = "Do you want to add this ingredient to the current recipe? [Y/N]";
             Program.TextWrap(add, 50, 20, 30);

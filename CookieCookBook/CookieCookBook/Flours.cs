@@ -143,56 +143,56 @@ namespace CookieCookBook
                         // make sure the check matches with this so if the user says no, it doesn't add it anyway. 
                         AllPurposeFlour APF = new AllPurposeFlour("All Purpose Flour", _APFDescription);
                         Program.TextWrap(APF.description, 50,10,50);
-                        CreateRecipeMainLoop.AddToRecipe("APF", 10, 40);
+                        CreateRecipeMainLoop.AddToRecipe("APF");
                         ReprintOptions();
                         break;
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
                         BreadFlour BF = new BreadFlour("Bread Flour", _BFDescription);
                         Program.TextWrap(BF.description, 50, 10, 50);
-                        CreateRecipeMainLoop.AddToRecipe("BF", 10, 40);
+                        CreateRecipeMainLoop.AddToRecipe("BF");
                         ReprintOptions();
                         break;
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
                         CakeFlour CF = new CakeFlour("Cake Flour", _CFDescription);
                         Program.TextWrap(CF.description, 50, 10, 50);
-                        CreateRecipeMainLoop.AddToRecipe("CF", 10, 40);
+                        CreateRecipeMainLoop.AddToRecipe("CF");
                         ReprintOptions();
                         break;
                     case ConsoleKey.D4:
                     case ConsoleKey.NumPad4:
                         PastryFlour PF = new PastryFlour("Pastry Flour", _PFDescription);
                         Program.TextWrap(PF.description, 50, 10, 50);
-                        CreateRecipeMainLoop.AddToRecipe("PF", 10, 40);
+                        CreateRecipeMainLoop.AddToRecipe("PF");
                         ReprintOptions();
                         break;
                     case ConsoleKey.D5:
                     case ConsoleKey.NumPad5:
                         AlmondFlour AF = new AlmondFlour("Almond Flour", _AFDescription);
                         Program.TextWrap(AF.description, 50, 10, 50);
-                        CreateRecipeMainLoop.AddToRecipe("AF", 10, 40);
+                        CreateRecipeMainLoop.AddToRecipe("AF");
                         ReprintOptions();
                         break;
                     case ConsoleKey.D6:
                     case ConsoleKey.NumPad6:
                         Sand sand = new Sand("Sand", _SandDescription);
                         Program.TextWrap(sand.description, 50, 10, 50);
-                        CreateRecipeMainLoop.AddToRecipe("PF", 10, 40);
+                        CreateRecipeMainLoop.AddToRecipe("Sand");
                         ReprintOptions();
                         break;
                     case ConsoleKey.D7:
                     case ConsoleKey.NumPad7:
                         Cornmeal CM = new Cornmeal("Cornmeal", _CMDescription);
                         Program.TextWrap(CM.description, 50, 10, 50);
-                        CreateRecipeMainLoop.AddToRecipe("CM", 10, 40);
+                        CreateRecipeMainLoop.AddToRecipe("CM");
                         ReprintOptions();
                         break;
                     case ConsoleKey.D8:
                     case ConsoleKey.NumPad8:
                         Oatmeal OM = new Oatmeal("Oatmeal", _OMDescription);
                         Program.TextWrap(OM.description, 50, 10, 50);
-                        CreateRecipeMainLoop.AddToRecipe("AF", 10, 40);
+                        CreateRecipeMainLoop.AddToRecipe("AF");
                         ReprintOptions();
                         break;
                     case ConsoleKey.D9:
